@@ -189,7 +189,7 @@ class Othello:
             for y in range(0,8):
                 if currentBoard[x][y].Piece.player ==2 or currentBoard[x][y].Piece.player ==-2:
                     currentBoard[x][y].Piece.player = 0
-                    print(x,y)
+                    #print(x,y)
                 if currentBoard[x][y].Piece.player == 0 or currentBoard[x][y].Piece.player ==2 or currentBoard[x][y].Piece.player ==-2:
                     move = (x,y)
                     if self.isLegal(move,currentBoard):
