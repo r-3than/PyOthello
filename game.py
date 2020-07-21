@@ -19,6 +19,7 @@ class piece:
             pygame.draw.circle(scr,WHITE,self.cent,round(self.rad/pi))
         if self.player == -2:
             pygame.draw.circle(scr,BLACK,self.cent,round(self.rad/pi))
+
 class Tile:
     def __init__(self,colour,rect,cent,boxSize):
         rad=round((boxSize)*0.75)
@@ -159,6 +160,9 @@ class Othello:
 
                         self.currentPlayer = -self.currentPlayer
                         thisMoves=self.legalMoves()
+                        if len(thisMoves) == 0:
+                            self.currentPlayer = -self.currentPlayer
+                            thisMoves=self.legalMoves()
                         self.theBoard.draw(self.screen)
                         pygame.display.flip()
                 if event.type == pygame.VIDEORESIZE:
